@@ -1,0 +1,388 @@
+/* variáveis em tudo na CSS */
+
+:root {
+    --text-light: #ffffff;
+    --bg-primary: #000000;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+.header {
+    /* largura - 100% é sempre o padrão de um container */
+    width: 100%;
+
+    /* altura */
+    height: 80px;
+
+    /* cor de fundo */
+    background-color: var(--bg-primary);
+
+    /* cor do texto */
+    color: var(--text-light);
+
+    /* posicionamento dos "filhos do header" */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.header-title {
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.header-logo {
+    color: #dc143c;
+}
+
+.menu ul {
+    /* tira as bolinhas do menu */
+    list-style: none;
+    /* coloca os itens do menu em linha  */
+    display: flex;
+}
+
+.menu-item {
+    /* espaçamento entre os itens do menu  */
+    margin: 0 15px;
+}
+
+.menu-item a {
+    /* cor dos links */
+    color: #ffffff;
+
+    /* tirar o sublinhado dos links*/
+    text-decoration: none;
+
+    font-size: 14px;
+
+    /* peso da fonte */
+    font-weight: 900;
+}
+
+/* o "hover" é o efeito que acontece quando o mouse passa por cima do link */
+.menu-item a:hover {
+    color: #dc143c;
+}
+
+/* estilizar o login */
+.btn {
+    padding: 5px 30px;
+    border: 1px solid #dc143c;
+    border-radius: 7px;
+    background-color: #dc143c;
+
+    /* tempo de transição da cor do botão para o hover */
+    transition: 1.25s;
+}
+
+.btn:hover {
+    background-color: transparent;
+}
+
+/* fim do header */
+
+/* inicio da hero */
+.hero {
+    width: 100%;
+
+    /* usa a altura do viewport */
+    height: calc(100vh - 80px);
+
+    /* imagem de fundo */
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5)),
+        url(../IMAGES/FIAP-1.jpg);
+
+    /* quando a imagem não couber no container, ela vai se repetir, o no reapeat tira isso */
+    background-repeat: no-repeat;
+
+    /* fazer com que a imagem cubra todo o container */
+    background-size: cover;
+
+    /* centraliar a imagem com o ponto central da tela */
+    background-position: 50%;
+
+    /* espaçamento entre o conteúdo e a margem esquerda do container */
+    padding-left: 50px;
+
+    /* flex para posicionar os conteudos da hero */
+    display: flex;
+
+    /* mudamos o padrao de flex-direction (row) para column para que os itens fiquem em coluna */
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    text-align: flex;
+}
+
+.hero-title {
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    width: 30vw;
+    /* text-align: center;
+    line-height: 50px; */
+
+}
+
+.hero-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 22px;
+    border: 1px solid var(--text-light);
+    padding: 15px 60px;
+    border-radius: 70px;
+    transition: 0.5s;
+}
+
+.hero-link:hover {
+    background-color: #dc143c;
+    border-color: #dc143c;
+}
+
+/* fim da hero */
+
+/* inicio do conteúdo principal (main) */
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    padding: 10px;
+}
+
+.wrapper-title {
+    text-align: center;
+    margin: 30px 0 20px;
+    font-size: 35px;
+    text-transform: uppercase;
+
+}
+
+/* services */
+.services-container, .portfolio {
+    width: 95%;
+    min-height: 90vh;
+
+    /* usamos margin com valor auto para centralizar a section - USADO PARA CONTAINERS */
+    margin: 20px auto;
+    display: flex;
+
+    /* padrão é não quebrar a linha, (nowrap), Mudar para wrap e assim quebra a linha */
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.services-item {
+    width: 30%;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 30px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+/* adiciona um efeito ao passar o mouse sobre os cards*/
+.services-item:hover {
+    border: transparent;
+    box-shadow: 1px 1px 10px #ccc;
+}
+
+.services-item i {
+    color: #4e5fbe;
+    font-size: 50px;
+    margin: 16px 0;
+}
+
+.services-title {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 16px 0;
+}
+
+.services-text {
+    text-align: center;
+    line-height: 28px;
+}
+
+/* fim services */
+
+/* portfólio */
+.portfolio {
+    background-color: var(--bg-primary);
+    width: 100%;
+
+}
+
+
+.portfolio-image {
+    width: 20vw;
+    background-color: var(--text-light);
+    padding: 10px 10px 20px 10px;
+    transition: .5s;
+}
+
+
+.portfolio-image img {
+    width: 100%;
+    height: 23vh;
+    cursor: pointer;
+}
+
+.portfolio-image:hover {
+    transform: rotate(0deg);
+}
+
+.rotation-left {
+    transform: rotate(-15deg);
+}
+
+.rotation-right {
+    transform: rotate(15deg);
+}
+
+.galeria {
+    width: 100%;
+    min-height: 90vh;
+    /* usamos margin com valor auto para centralizar a section - USADO PARA CONTAINERS */
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.primary-image {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.primary-img {
+    width: 100%;
+    height: 100%;
+    padding: calc((100vh - 70vh) / 2);
+}
+.primary-img img{
+    width: 40vw;
+    height: 70vh;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.alter-images {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.alter-item {
+    width: calc(70vw / 4);
+    height: 35vh;
+    background-color: #ffffff;
+    border: transparent;
+    box-shadow: 1px 1px 10px #000000;
+    border-radius: 5px;
+    padding: 10px 10px 40px 10px;
+    background-image: linear-gradient(to bottom, #0b02ff, #ffffff); 
+    cursor: pointer;
+    transition: .5s;
+}
+
+.alter-item img {
+    width: 100%;
+    height:100%;
+    border-radius: 10px;
+}
+
+.primary-img img:hover{
+    transform: scale(1.05);
+    box-shadow: 1px 1px 10px #ff0000;
+}
+.alter-item:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 10px #ff0000;
+}
+.footer{
+    color: #fff;
+    width: 100%;
+    height: 50vh;
+    background-color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.footer-left{
+    width: 50%;
+    height: 80%;    
+    display: flex;
+    flex-direction: column;
+    padding: 10vh;
+}
+
+.footer-left a {
+    color: #fff;
+    margin: 0px 10px;
+}
+.footer-left h2 {
+    margin: 0px 10px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.footer-left p {
+    margin: 0px 10px;
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-right{
+    width:50%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 80px 0 20px 0;
+}
+.footer-right a{
+    line-height: 30px;
+    color: #fff;
+    text-decoration: none;
+}
+.footer-right ul {
+    list-style: none;
+}
+
+.footer-right a:hover, .footer-left a:hover {
+    background-color: rgba(rgb(255, 0, 0), rgb(250, 10, 10), rgb(255, 0, 0), 0.5);
+    border-radius: 12px;
+    box-shadow: #ff0080 1px 1px 10px;
+    color: #dc143c;
+}
+html {
+    /* transição para os links - nao funciona no safari */
+    scroll-behavior: smooth;
+}
